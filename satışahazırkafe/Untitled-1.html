@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafe Menü</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+            background: #ff8a00;
+            color: white;
+            padding: 20px 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 15px 0;
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 20px;
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .menu-category {
+            margin-top: 30px;
+            font-size: 1.8rem;
+            color: #ff8a00;
+            font-weight: bold;
+        }
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 30px;
+            gap: 15px;
+        }
+        .menu-item {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            width: 90%;
+            max-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .menu-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        .menu-item img {
+            width: 100%;
+            border-radius: 15px;
+        }
+        .price-list {
+            display: none;
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-top: 10px;
+        }
+        .menu-item.active .price-list {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                align-items: center;
+            }
+            .menu-item {
+                width: 80%;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .menu-category {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Kafe Adı</header>
+    <h1>Menümüz</h1>
+    
+    <div class="menu-category">İçecekler</div>
+    <div class="menu">
+        <div class="menu-item" onclick="togglePriceList(this)">
+            <img src="kahve.jpg" alt="Kahve">
+            <h2>İçecekleri görmek için tıklayın</h2>
+            <div class="price-list">
+                <p>Espresso - 30₺</p>
+                <p>Latte - 40₺</p>
+                <p>Americano - 35₺</p>
+                <p>Demleme Çay - 30₺</p>
+                <p>Yeşil Çay - 30₺</p>
+                <p>Adaçayı/Papatya/Melisa - 35₺</p>
+                <p>Soğuk Çay - 25₺</p>
+                <p>Filtre Kahve - 40₺</p>
+                <p>Türk Kahvesi - 40₺</p>
+                <p>Sıcak Çikolata - 30₺</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="menu-category">Tatlılar</div>
+    <div class="menu">
+        <div class="menu-item" onclick="togglePriceList(this)">
+            <img src="tatlı.jpg" alt="Pasta">
+            <h2>Tatlıları görmek için tıklayın</h2>
+            <div class="price-list">
+                <p>Çikolatalı Pasta - 50₺</p>
+                <p>Meyveli Pasta - 45₺</p>
+                <p>San Sebastian Cheesecake -100₺</p>
+                <p>Limonlu Cheesecake - 150₺</p>
+                <p>Çilekli Tart - 200₺</p>
+                <p>Lotus Cheesecake - 100₺</p>
+                <p>Portakallı ve Havuçlu Islak Kek - 100₺</p>
+                <p>Dondurma (1 Top) - 50₺</p>
+                <p>Sütlaç - 75₺</p>
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="menu-category">Unlu Mamüller</div>
+    <div class="menu">
+        <div class="menu-item" onclick="togglePriceList(this)">
+            <img src="unlumamül.jpg" alt="Unlu Mamül">
+            <h2>Unlu mamül çeşitlerini görmek için tıklayın</h2>
+            <div class="price-list">
+                <p>Poğaça - 15₺</p>
+                <p>Çıtır Kruvasan - 25₺</p>
+                <p>Simit -10₺</p>
+                <p>Poğaça pizza - 20₺</p>
+                <p>Börek - 10₺</p>
+
+            </div>
+        </div>
+    </div>
+    
+    <footer>&copy; 2025 Kafemiz - Tüm Hakları Saklıdır.</footer>
+    
+    <script>
+        function togglePriceList(element) {
+            element.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
